@@ -1444,7 +1444,7 @@ public Action:Event_PlayerHurt(Handle:hEvent, const String:name[], bool:dontBroa
 	new victim = GetClientOfUserId( GetEventInt(hEvent, "userid") );
 	new attacker = GetClientOfUserId( GetEventInt(hEvent, "attacker") );
 	
-	if (IS_VALID_SURVIVOR(victim) && IS_VALID_SURVIVOR(attacker))
+	if (IS_VALID_SURVIVOR(victim) && IS_VALID_SURVIVOR(attacker) && victim != attacker)
 	{
 		new dmg = GetEventInt(hEvent, "dmg_health");
 		
